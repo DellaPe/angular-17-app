@@ -1,0 +1,7 @@
+ul {
+  cursor: pointer;
+}
+
+.game-favorite {
+  background-color: rgb(10, 96, 2);
+}

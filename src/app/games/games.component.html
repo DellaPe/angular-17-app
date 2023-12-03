@@ -1,0 +1,10 @@
+@if (username) {
+<h2>Juegos en biblioteca:</h2>
+<ul>
+  @for (game of games; track game.id) {
+  <li (click)="handleFavorite(game.id)" [ngClass]="{'game-favorite': game.favorite}">{{game.name}}</li>
+  }
+</ul>
+} @else {
+<p>Por favor, inicia sesión para ver tus juegos</p>
+}

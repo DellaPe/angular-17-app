@@ -1,0 +1,20 @@
+<section>
+  @if (isLoggdIn) {
+  <p>Bienvenido, {{username}}</p>
+  <img (click)="logout()" alt="photo" src="https://github.com/DellaPe.png" />
+  } @else {
+  <button (click)="login()">¡Iniciar sesión!</button>
+  }
+  <app-games username="{{username}}" (favoriteEvent)="favoriteEvent($event)" />
+  @if (lastUpdateGame) {
+  <p>Último juego actualizado: {{lastUpdateGame}}</p>
+  }
+
+  @defer (on viewport) {
+  <app-defer />
+  } @placeholder {
+  <p>Carga diferida...</p>
+  } @loading {
+  <p>Cargando...</p>
+  }
+</section>
